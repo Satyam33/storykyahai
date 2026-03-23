@@ -38,7 +38,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="relative z-10 group">
           <div className="flex flex-col items-center">
-            <Image src="/brandLogo.png" alt="Story Kyahai Logo" width={200} height={48} className="h-12 object-none" priority />
+            <Image src="/brandLogo.png" alt="Story Kyahai Logo" width={200} height={48} className="h-12 object-contain" priority />
           </div>
         </Link>
 

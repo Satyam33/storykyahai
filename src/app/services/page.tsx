@@ -1,167 +1,212 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const services = [
   {
-    category: "Kahani (Branding)",
-    title: "Brand Identity & Strategy",
-    description: "Your brand is more than just a logo. We craft its whole personality.",
-    items: ["Brand Identity", "Brand Guideline", "Brand Personality", "Packaging", "Space Design", "Brand Strategy"]
+    num: "01 //",
+    category: "Branding",
+    title: "Crafting Souls.",
+    description: "Your brand is more than just a logo or a name. It's a living entity. We dig deep into its soul to craft its personality—building brands that connect, resonate, and endure.",
+    items: ["Brand Identity", "Brand Building", "Brand Guidelines", "Visual Language", "Brand Strategy"]
   },
   {
-    category: "Digital",
-    title: "Digital Presence & Marketing",
-    description: "Making sure your story reaches the right screens, at the right time.",
-    items: ["Social Media Management", "Strategy", "Campaigns", "Ad Management", "Website Development", "SEO"]
+    num: "02 //",
+    category: "Digital Edge",
+    title: "Digital Dominance.",
+    description: "Taking your story to the right audience. Be it engaging digital marketing campaigns or seamless e-commerce experiences on Shopify, we build your digital footprint.",
+    items: ["Digital Marketing", "Shopify Websites", "Social Media", "SEO", "Ad Management"]
   },
   {
+    num: "03 //",
     category: "Films",
-    title: "Visual Storytelling",
-    description: "Motion that brings your narrative to life and creates a lasting impact.",
-    items: ["Ad Films", "Corporate Film", "Motion Graphics", "Brand Explainers"]
+    title: "Visual Narratives.",
+    description: "Moving imagery that tells your truth. Every frame is carefully crafted to leave a lasting impact, from raw documentaries to aesthetic brand films.",
+    items: ["Visual Storytelling", "Documentary Video", "Ad Films", "Corporate Film", "Motion Graphics"]
   }
 ];
 
 const process = [
   {
-    step: "01",
-    title: "खोज (Research)",
-    description: "Clarifying and translating insights into foundation and creative approach. Every great story starts with understanding the core character—your brand."
+    num: "I.",
+    title: "Discovery",
+    desc: "Every great story starts with understanding the core character—your brand. We translate insights into foundation."
   },
   {
-    step: "02",
-    title: "योजना (Strategy)",
-    description: "Charting the perfect path for your narrative. We plan where, when, and how your story will make the highest impact."
+    num: "II.",
+    title: "Strategy",
+    desc: "Charting the perfect path. We plan where, when, and how your narrative will make the deepest impact."
   },
   {
-    step: "03",
-    title: "मुकाम (Execution)",
-    description: "Bringing the vision to reality. A flawless execution that ensures the world stops, listens, and remembers."
+    num: "III.",
+    title: "Execution",
+    desc: "Bringing the vision to reality. A flawless execution that ensures the world stops, listens, and remembers."
   }
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-primary/30">
-      {/* Hero Section */}
-      <section className="relative pt-40 pb-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-              What We <span className="text-primary italic">Offer</span>
-            </h1>
-            <p className="text-xl text-gray-400 font-light leading-relaxed">
-              <span className="text-white font-medium">Har brand mein ek kahani hoti hai... bas kisi ko sunani nahi aati.</span> <br className="hidden md:block" />
-              We are here to tell yours.
+    <main className="bg-[#050505] text-neutral-200 min-h-screen selection:bg-primary selection:text-black font-sans">
+
+      {/* 1) HERO SECTION */}
+      <section className="relative min-h-[90vh] flex flex-col justify-end px-6 md:px-12 py-32 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="z-10 max-w-7xl mx-auto w-full"
+        >
+          <div className="flex flex-col gap-6">
+            <p className="text-primary font-medium tracking-widest uppercase text-sm flex items-center gap-4">
+              <span className="w-12 h-[1px] bg-primary block"></span>
+              Our Expertise
             </p>
-          </motion.div>
-        </div>
+            <h1 className="text-[14vw] md:text-[9vw] lg:text-[8vw] font-black leading-[0.85] tracking-tighter text-white uppercase mix-blend-difference relative z-10 w-full mb-12">
+              What we <br />
+              <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--primary, #fff)' }}>
+                shape
+              </span>
+              {" "}for you.
+            </h1>
+
+            <p className="max-w-xl text-neutral-400 text-lg md:text-2xl font-light leading-relaxed">
+              <span className="text-white font-medium italic">Har brand mein ek kahani hoti hai... bas kisi ko sunani nahi aati.</span>
+              <br className="block my-2" />
+              We don&apos;t just create. We extract, build, and echo stories that resonate with the world.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Ambient Glow */}
+        <div className="absolute top-1/4 right-[10%] w-[40vw] h-[40vw] rounded-full bg-primary/20 blur-[150px] mix-blend-screen pointer-events-none"></div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-6 lg:px-8 bg-neutral-950">
-        <div className="max-w-7xl mx-auto space-y-32">
-          {services.map((service, idx) => (
+      {/* 2) SERVICES SECTIONS (Stacked Cards) */}
+      <section className="pb-16 md:pb-24 relative z-10 px-8 max-w-[100vw] overflow-x-hidden">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="sticky w-full flex justify-center mb-16 lg:mb-24 top-[var(--top-mobile)] md:top-[var(--top-desktop)]"
+            style={{
+              "--top-mobile": `calc(${index * 1}rem + 4rem)`,
+              "--top-desktop": `calc(${index * 2}rem + 6rem)`,
+            } as React.CSSProperties}
+          >
+            {/* The Card */}
             <motion.div
-              key={service.category}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className={`flex flex-col md:flex-row gap-12 items-start ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full max-w-7xl bg-[#0a0a0a] border border-white/5 rounded-[30px] md:rounded-[40px] flex flex-col lg:flex-row shadow-[0_-10px_50px_rgba(0,0,0,0.5)] relative overflow-hidden"
             >
-              <div className="flex-1 space-y-6">
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase rounded-full">
-                  {service.category}
-                </span>
-                <h2 className="text-4xl md:text-5xl font-bold">{service.title}</h2>
-                <p className="text-gray-400 text-lg leading-relaxed">{service.description}</p>
+
+              {/* Left Column (Sticky Title & Description) */}
+              <div className="lg:w-[45%] p-8 md:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/5 relative z-10 bg-[#0c0c0c]">
+                <div>
+                  <span className="text-primary/70 font-mono text-xl md:text-2xl">{service.num}</span>
+                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mt-6 tracking-tight text-white uppercase">
+                    {service.category}
+                  </h2>
+                  <h3 className="text-xl md:text-2xl text-neutral-500 mt-3 font-serif italic">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-neutral-400 text-lg md:text-xl font-light leading-relaxed max-w-md mt-12 lg:mt-24">
+                  {service.description}
+                </p>
               </div>
 
-              <div className="flex-[1.5] grid grid-cols-2 gap-4 md:gap-6 w-full">
-                {service.items.map((item, i) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-primary/50 transition-colors group cursor-default shadow-xl"
-                  >
-                    <div className="text-primary mb-4 opacity-70 group-hover:opacity-100 transition-opacity">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></svg>
-                    </div>
-                    <h3 className="font-medium text-lg text-neutral-200 group-hover:text-white transition-colors">{item}</h3>
-                  </motion.div>
-                ))}
+              {/* Right Column (The Sub-items list) */}
+              <div className="lg:w-[55%] p-8 md:p-14 bg-[#0a0a0a] flex flex-col justify-center relative z-10">
+                <div className="flex flex-col w-full">
+                  {service.items.map((item, i) => (
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-10%" }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      key={i}
+                      className="group flex flex-col py-6 md:py-8 border-b border-white/5 last:border-0 relative cursor-crosshair"
+                    >
+                      {/* Hover Fill Line */}
+                      <div className="absolute bottom-0 left-0 h-[1px] bg-primary w-0 group-hover:w-full transition-all duration-700 ease-out z-20"></div>
+
+                      <div className="flex items-center justify-between z-10 w-full relative">
+                        <span className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-neutral-600 group-hover:text-white transition-colors duration-500 uppercase">
+                          {item}
+                        </span>
+
+                        <span className="text-primary opacity-0 -translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 hidden sm:block">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                          </svg>
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
+
             </motion.div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
-      {/* Process Section */}
-      <section className="py-32 px-6 lg:px-8 border-t border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto">
+      {/* 3) PROCESS SECTION */}
+      <section className="pt-20 pb-32 md:pt-32 md:pb-48 px-8 md:px-12 bg-[#020202] text-white overflow-hidden border-t border-white/5 relative">
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-24"
+            className="mb-16 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-12"
           >
-            <h2 className="text-primary text-sm font-bold tracking-[0.2em] uppercase mb-4">How We Work</h2>
-            <h3 className="text-5xl md:text-6xl font-black tracking-tight">कार्य श्रेणी</h3>
+            <div>
+              <h4 className="text-primary font-mono tracking-widest uppercase mb-4 md:mb-6 text-xs md:text-sm flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-primary block"></span> Process
+              </h4>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
+                How we <br /> <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--primary, #fff)' }}>execute.</span>
+              </h2>
+            </div>
+            <p className="max-w-md text-neutral-400 text-base md:text-xl font-light">
+              We believe great agencies don't just shoot in the dark. We follow a sharp, ruthless mechanism to give birth to your narrative.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {process.map((step, idx) => (
+          <div className="w-full flex flex-col">
+            {process.map((p, idx) => (
               <motion.div
-                key={step.step}
+                key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.2 }}
-                className="relative p-10 rounded-3xl bg-neutral-900/40 border border-white/5 overflow-hidden group hover:bg-neutral-900 hover:border-white/10 transition-all duration-300"
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="group border-t border-white/10 last:border-b py-10 md:py-20 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-16 hover:bg-neutral-900/40 transition-colors px-6 -mx-6 md:mx-0 md:px-8 rounded-3xl"
               >
-                <div className="absolute -top-4 -right-4 text-9xl font-black text-white/[0.03] group-hover:text-primary/[0.05] transition-colors pointer-events-none select-none">
-                  {step.step}
+                <div className="text-6xl md:text-9xl font-black text-transparent group-hover:text-primary/10 transition-colors duration-500 w-full md:w-auto text-left" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)' }}>
+                  {p.num}
                 </div>
-                <h4 className="text-3xl font-bold mb-6 text-white group-hover:text-primary transition-colors">{step.title}</h4>
-                <p className="text-gray-400 text-lg leading-relaxed">{step.description}</p>
+
+                <div className="flex-1 w-full">
+                  <div className="flex flex-col md:flex-row md:items-end gap-2 md:gap-6 mb-4 md:mb-6">
+                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">
+                      {p.title}
+                    </h3>
+                  </div>
+                  <p className="text-base md:text-2xl text-neutral-400 font-light max-w-3xl leading-relaxed">
+                    {p.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      {/* <section className="py-32 px-6 lg:px-8 bg-primary text-black text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 blur-[100px]">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white rounded-full"></div>
-        </div>
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto relative z-10"
-        >
-          <span className="font-bold tracking-widest uppercase text-black/60 mb-6 block text-sm">Let's have चर्चा</span>
-          <h2 className="text-5xl md:text-7xl font-black mb-12 leading-[1.1] tracking-tight">
-            Have a project in mind? <br/>
-            Let's tell its story.
-          </h2>
-          <Link href="/#contact" className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold bg-black text-white rounded-full hover:scale-105 transition-transform shadow-2xl">
-            Let's Connect
-          </Link>
-        </motion.div>
-      </section> */}
     </main>
   );
 }
+

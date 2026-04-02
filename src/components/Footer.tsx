@@ -40,7 +40,8 @@ export default function Footer() {
               hello@storykyahai.com
             </a>
             <div className="px-8 py-4 rounded-full border border-white/20 text-lg font-medium tracking-wide">
-              +91 99999 99999 <span className="text-white/30 mx-4">|</span> +91 88888 88888
+              +91 63516 57990
+              {/* <span className="text-white/30 mx-4">|</span> +91 88888 88888 */}
             </div>
           </div>
         </div>
@@ -62,8 +63,8 @@ export default function Footer() {
               <MapPin className="w-5 h-5" /> Visit Our Office
             </h3>
             <p className="text-white/70 leading-relaxed font-medium text-lg pt-2 pr-10">
-              123, Story House, Opp. Creator Park, <br />
-              Brand Road, Mumbai, India – 400001
+              B3/401, Pragati IT park Digital Valley<br />
+              Mota Varachha, Surat.
             </p>
           </div>
         </div>

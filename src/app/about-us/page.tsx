@@ -18,7 +18,7 @@ export default function AboutUsPage() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-primary/30">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 px-6 lg:px-8">
+      <section className="relative md:pt-40 pt-6 md:pb-20 pb-6 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -90,7 +90,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-32 px-6 lg:px-8 border-t border-white/5 bg-black">
+      {/* <section className="py-32 px-6 lg:px-8 border-t border-white/5 bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,6 @@ export default function AboutUsPage() {
             <h3 className="text-5xl font-black tracking-tight">Meet the Crew</h3>
           </motion.div>
 
-          {/* Scrolling text marquee effect or simple grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {team.map((member, idx) => (
               <motion.div
@@ -121,7 +120,7 @@ export default function AboutUsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Hiring/CTA Section */}
       {/* <section className="py-32 px-6 lg:px-8 bg-primary text-black text-center relative overflow-hidden">

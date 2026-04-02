@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Bakbak_One } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const bakbakOne = Bakbak_One({
+  weight: "400",
+  variable: "--font-bakbak",
+  subsets: ["devanagari", "latin"],
 });
 
 import SmoothScroll from "@/components/SmoothScroll";
@@ -29,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${bakbakOne.variable} antialiased`}>
       <body className="min-h-screen flex flex-col pt-24" suppressHydrationWarning>
         <SmoothScroll>
           <Header />

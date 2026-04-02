@@ -53,7 +53,7 @@ export default function AboutUsPage() {
             <h2 className="text-4xl md:text-5xl font-bold">Har brand mein ek kahani hoti hai...</h2>
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
               <p>
-                We started with a simple observation: Great brands were failing not because their products were bad, but because <span className="text-white font-medium">unhe apni kahani sunani nahi aati thi.</span>
+                We started with a simple observation: Great brands were failing not because their products were bad, but because <span className="text-primary font-medium">unhe apni kahani sunani nahi aati thi.</span>
               </p>
               <p>
                 We didn't start in a fancy glass office. We started over countless cups of cutting chai, armed with passion, creativity, and a fresh perspective on what advertising should actually feel like.
@@ -80,8 +80,8 @@ export default function AboutUsPage() {
               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]"></div>
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <h2 className="text-4xl md:text-5xl font-black text-center leading-relaxed text-white/50 group-hover:text-primary transition-colors duration-500">
-                  कुछ <br /> CREATIVE <br /> करे <span className="text-primary">*</span>
+                <h2 className="text-4xl md:text-5xl font-black text-center leading-relaxed text-white/50 group-hover:text-primary transition-colors duration-500 font-hindi tracking-wide">
+                  कुछ <br /> <span className="font-sans font-black tracking-tighter">CREATIVE</span> <br /> करे <span className="text-primary font-sans">*</span>
                 </h2>
               </div>
             </div>

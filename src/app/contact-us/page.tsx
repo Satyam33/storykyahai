@@ -20,7 +20,7 @@ export default function ContactUsPage() {
             </h1>
             <p className="text-xl text-gray-400 font-light leading-relaxed">
               If you would like to tell your story, or just want to have a <br className="hidden md:block" />
-              <span className="text-white font-medium">charcha (चर्चा)</span>, we'd love to hear from you!
+              <span className="text-white font-medium">charcha (<span className="font-hindi font-medium tracking-normal">चर्चा</span>)</span>, we'd love to hear from you!
             </p>
           </motion.div>
         </div>
@@ -85,7 +85,7 @@ export default function ContactUsPage() {
               {/* Subtle background glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-colors duration-500 pointer-events-none"></div>
 
-              <h3 className="text-3xl font-black mb-8 relative z-10">Let's Have <span className="text-primary tracking-tight">चर्चा</span></h3>
+              <h3 className="text-3xl font-black mb-8 relative z-10">Let's Have <span className="text-primary tracking-normal font-hindi font-medium">चर्चा</span></h3>
 
               <form className="space-y-8 relative z-10" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -6,6 +6,7 @@
   --color-primary: #ECAE35;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-hindi: var(--font-bakbak);
 }
 
 @layer base {

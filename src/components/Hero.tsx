@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const taglineWords = "Har brand mein ek kahani hoti hai… bas kisi ko sunani nahi aati".split(" ");
+const taglineWords = "Har brand mein ek कहानी hoti hai… bas kisi ko सुनानी nahi aati".split(" ");
 
 export default function Hero() {
   return (
@@ -37,8 +37,8 @@ export default function Hero() {
               }}
               className="inline-block mr-3 md:mr-5 lg:mr-6"
             >
-              {word === "kahani" || word === "sunani" ? (
-                <span className="text-primary italic pr-2">{word}</span>
+              {word === "कहानी" || word === "सुनानी" ? (
+                <span className="text-primary pr-2 font-hindi tracking-normal">{word}</span>
               ) : (
                 word
               )}
